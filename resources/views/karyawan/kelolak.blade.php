@@ -111,7 +111,11 @@
         </ul>
     </nav>
 </div>
-    <hr>
+    <div class="divider">
+      <div class="divider-text">
+        ==========
+      </div>
+    </div>
 
       <div class="d-grid gap-2">
         <a href="/TambahK" class="btn btn-primary" type="button">Tambah Karyawan</a>

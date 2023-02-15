@@ -34,3 +34,9 @@ Route::get('/TambahK', function () {
         'deskripsi' => 'Halaman berisi informasi singkat mengenai data-data di dalam sistem kasir Dry and Clean'
     ]);
 });
+Route::get('/laporan', function () {
+    return view('Laporan.tambah',[
+        'title' => 'Dashboard',
+        'deskripsi' => 'Halaman berisi informasi singkat mengenai data-data di dalam sistem kasir Dry and Clean'
+    ]);
+});
