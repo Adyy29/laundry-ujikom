@@ -40,8 +40,6 @@ Route::get('/laporan', function () {
         'deskripsi' => 'Halaman berisi informasi singkat mengenai data-data di dalam sistem kasir Dry and Clean'
     ]);
 });
-=======
-
 Route::get('/outlet', function () {
     return view('outlet.index', [
         'title' => 'Outlet',
