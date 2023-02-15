@@ -25,3 +25,6 @@ Route::get('/karyawan', function () {
         'deskripsi' => 'Halaman berisi informasi singkat mengenai data-data di dalam sistem kasir Dry and Clean'
     ]);
 });
+Route::get('/login', function () {
+    return view('login');
+});
