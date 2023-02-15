@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/shared/iconly.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/main/app-dark.css') }}">
     <link rel="stylesheet" href="{{ asset('fontawesome/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/extensions/simple-datatables/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/pages/simple-datatables.css') }}">
 
 </head>
 
@@ -40,6 +42,7 @@
                 @yield('content')
             </div>
 
+            <hr>
             <footer>
                 <div class="footer clearfix mb-0 text-muted">
                     <div class="float-start">
@@ -55,6 +58,8 @@
     </div>
 
     {{-- =============== JavaScript =============== --}}
+    <script src="{{ asset('assets/extensions/simple-datatables/umd/simple-datatables.js') }}"></script>
+    <script src="{{ asset('assets/js/pages/simple-datatables.js') }}"></script>
     <script src="{{ asset('assets/extensions/apexcharts/apexcharts.min.js') }}"></script>
     <script src="{{ asset('assets/js/pages/dashboard.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.js') }}"></script>
