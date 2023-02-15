@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 Route::get('/karyawan', function () {
     return view('karyawan.kelolak',[
-        'title' => 'Dashboard',
+        'title' => 'Pengguna',
         'deskripsi' => 'Halaman berisi informasi singkat mengenai data-data di dalam sistem kasir Dry and Clean'
     ]);
 });
@@ -30,19 +30,31 @@ Route::get('/login', function () {
 });
 Route::get('/TambahK', function () {
     return view('karyawan.tambahk',[
-        'title' => 'Dashboard',
+        'title' => 'Pengguna',
         'deskripsi' => 'Halaman berisi informasi singkat mengenai data-data di dalam sistem kasir Dry and Clean'
     ]);
 });
 Route::get('/laporan', function () {
     return view('Laporan.tambah',[
-        'title' => 'Dashboard',
+        'title' => 'Laporan',
         'deskripsi' => 'Halaman berisi informasi singkat mengenai data-data di dalam sistem kasir Dry and Clean'
     ]);
 });
 Route::get('/outlet', function () {
     return view('outlet.index', [
         'title' => 'Outlet',
+        'deskripsi' => 'Halaman pengelolaan outlet sistem kasir Dry and Clean'
+    ]);
+});
+Route::get('/pelanggan', function () {
+    return view('registpelanggan.kelolap', [
+        'title' => 'Pelanggan',
+        'deskripsi' => 'Halaman pengelolaan outlet sistem kasir Dry and Clean'
+    ]);
+});
+Route::get('/tambahp', function () {
+    return view('registpelanggan.tambahp', [
+        'title' => 'Pelanggan',
         'deskripsi' => 'Halaman pengelolaan outlet sistem kasir Dry and Clean'
     ]);
 });
