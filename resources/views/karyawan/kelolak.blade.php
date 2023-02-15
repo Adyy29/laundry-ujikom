@@ -114,7 +114,7 @@
     <hr>
 
       <div class="d-grid gap-2">
-        <button class="btn btn-primary" type="button">Tambah Karyawan</button>
+        <a href="/TambahK" class="btn btn-primary" type="button">Tambah Karyawan</a>
       </div>
 
       <div class="pt-5">

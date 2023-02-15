@@ -28,3 +28,9 @@ Route::get('/karyawan', function () {
 Route::get('/login', function () {
     return view('login');
 });
+Route::get('/TambahK', function () {
+    return view('karyawan.tambahk',[
+        'title' => 'Dashboard',
+        'deskripsi' => 'Halaman berisi informasi singkat mengenai data-data di dalam sistem kasir Dry and Clean'
+    ]);
+});
