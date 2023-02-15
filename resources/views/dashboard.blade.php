@@ -1,7 +1,6 @@
 @extends('layouts.main')
 
 @section('content')
-
     {{-- Card Information --}}
     <section class="row">
         <div class="col-12">
