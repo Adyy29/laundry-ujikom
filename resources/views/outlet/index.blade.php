@@ -202,9 +202,9 @@
     {{-- Create Page --}}
     <div class="container">
         <div class="d-grid gap-2">
-            <button class="btn btn-primary">
+            <a href="/tambahoutlet" class="btn btn-primary">
                 <i class="fa-solid fa-plus"></i> Tambah Outlet
-            </button>
+            </a>
         </div>
     </div>
 

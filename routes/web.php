@@ -46,3 +46,12 @@ Route::get('/outlet', function () {
         'deskripsi' => 'Halaman pengelolaan outlet sistem kasir Dry and Clean'
     ]);
 });
+Route::get('/tambahoutlet', function () {
+    return view('outlet.tambah', [
+        'title' => 'Outlet',
+        'deskripsi' => 'Halaman pengelolaan outlet sistem kasir Dry and Clean'
+    ]);
+});
+Route::get('/login', function () {
+    return view('login');
+});
