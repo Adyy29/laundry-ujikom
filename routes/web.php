@@ -19,3 +19,9 @@ Route::get('/', function () {
         'deskripsi' => 'Halaman berisi informasi singkat mengenai data-data di dalam sistem kasir Dry and Clean'
     ]);
 });
+Route::get('/karyawan', function () {
+    return view('karyawan.kelolak',[
+        'title' => 'Dashboard',
+        'deskripsi' => 'Halaman berisi informasi singkat mengenai data-data di dalam sistem kasir Dry and Clean'
+    ]);
+});
