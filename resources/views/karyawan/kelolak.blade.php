@@ -121,7 +121,4 @@
         <a href="/TambahK" class="btn btn-primary" type="button">Tambah Karyawan</a>
       </div>
 
-      <div class="pt-5">
-      <hr>
-    </div>     
 @endsection

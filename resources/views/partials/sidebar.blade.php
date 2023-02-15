@@ -64,42 +64,49 @@
                     </a>
                 </li>
 
-                <li class="sidebar-item {{ ($title === 'Dashboard') ? 'active' : '' }}">
-                    <a href="#" class='sidebar-link'>
+                <li class="sidebar-item {{ ($title === 'Pengguna') ? 'active' : '' }}">
+                    <a href="karyawan" class='sidebar-link'>
                         <i class="fa-solid fa-user-group"></i>
                         <span>Kelola Pengguna</span>
                     </a>
                 </li>
 
-                <li class="sidebar-item {{ ($title === 'Dashboard') ? 'active' : '' }}">
+                <li class="sidebar-item {{ ($title === 'Paket') ? 'active' : '' }}">
                     <a href="#" class='sidebar-link'>
                         <i class="fa-solid fa-boxes-packing"></i>
                         <span>Kelola Paket</span>
                     </a>
                 </li>
 
-                <li class="sidebar-item {{ ($title === 'Dashboard') ? 'active' : '' }}">
-                    <a href="#" class='sidebar-link'>
+                <li class="sidebar-item {{ ($title === 'Pelanggan') ? 'active' : '' }}">
+                    <a href="/pelanggan" class='sidebar-link'>
                         <i class="fa-solid fa-user"></i>
                         <span>Kelola Pelanggan</span>
                     </a>
                 </li>
 
-                <li class="sidebar-item  has-sub {{ ($title === 'Dashboard') ? 'active' : '' }}">
+                <li class="sidebar-item  has-sub {{ ($title === 'Transaksi') ? 'active' : '' }}">
                 <a href="#" class='sidebar-link'>
                     <i class="fa-solid fa-money-check-dollar"></i>
                     <span>Transaksi</span>
                 </a>
                 <ul class="submenu ">
-                    <li class="submenu-item {{ ($title === 'Dashboard') ? 'active' : '' }}">
+                    <li class="submenu-item {{ ($title === 'Pembayaran') ? 'active' : '' }}">
                         <a href="component-alert.html">Pembayaran</a>
                     </li>
-                    <li class="submenu-item {{ ($title === 'Dashboard') ? 'active' : '' }}">
+                    <li class="submenu-item {{ ($title === 'Riwayat') ? 'active' : '' }}">
                         <a href="component-badge.html">Riwayat Transaksi</a>
                     </li>
                 </ul>
 
-                <li class="sidebar-item {{ ($title === 'Dashboard') ? 'active' : '' }}">
+                <li class="sidebar-item {{ ($title === 'Laporan') ? 'active' : '' }}">
+                    <a href="/laporan" class='sidebar-link'>
+                        <i class="fa-solid fa-user"></i>
+                        <span>Laporan</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item {{ ($title === 'Logout') ? 'active' : '' }}">
                     <a href="#" class='sidebar-link'>
                         <i class="fa-solid fa-right-from-bracket"></i>
                         <span>Logout</span>
