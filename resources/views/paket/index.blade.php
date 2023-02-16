@@ -1,6 +1,5 @@
 @extends('layouts.main')
 
-
 @section('content')
     {{-- Tabel --}}
     <div class="container">
