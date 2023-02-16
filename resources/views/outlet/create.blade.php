@@ -25,7 +25,7 @@
                             <div class="form-group">
                                 <label for="first-name-vertical">No Telepon</label>
                                 <input
-                                type="text"
+                                type="number"
                                 id="first-name-vertical"
                                 class="form-control @error('telp') is-invalid @enderror"
                                 name="telp"
@@ -144,7 +144,7 @@
                                 <div class="form-group">
                                     <label for="email-id-column">Kode POS</label>
                                     <input
-                                    type="text"
+                                    type="number"
                                     id="email-id-column"
                                     class="form-control @error('kode_pos') is-invalid @enderror"
                                     name="kode_pos"
