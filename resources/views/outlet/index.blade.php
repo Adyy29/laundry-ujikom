@@ -1,5 +1,6 @@
 @extends('layouts.main')
 
+
 @section('content')
     {{-- Search Bar --}}
     <div class="container">
