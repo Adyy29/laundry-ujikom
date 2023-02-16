@@ -43,7 +43,27 @@ class OutletController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rules = $request->validate([
+            'nama' => 'required',
+            'jalan' => 'required',
+            'RT' => 'required',
+            'RW' => 'required',
+            'kode_pos' => 'required',
+            'provinsi' => 'required',
+            'kabupaten' => 'required',
+            'kecamatan' => 'required',
+            'negara' => 'required',
+            'telp' => 'required',
+            'gambar' => 'image|file|mimes:jpeg,png,jpg,gif,svg|max:20000'
+        ]);
+
+        if ($request->file('gambar')) {
+            $data['gambar'] = $request->file('gambar')->store('post-images');
+        }
+
+        Outlet::create($rules);
+        return redirect('/outlet');
+
     }
 
     /**

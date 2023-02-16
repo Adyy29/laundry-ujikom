@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Request;
-use App\Models\Pelanggan;
 use App\Models\Outlet;
+use App\Models\Pelanggan;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class admin extends Controller
 {
@@ -32,7 +33,7 @@ class admin extends Controller
             'kabupaten' => 'required',
             'kecamatan' => 'required',
             'hp' => 'required',
-            'gambar' => 'image|file|mimes:jpeg,png,jpg,gif,svg|max:20000000'
+            'gambar' => 'image|file|mimes:jpeg,png,jpg,gif,svg|max:20000'
         ]);
 
         $file = $request->file('gambar');
@@ -99,12 +100,12 @@ class admin extends Controller
 
         $validateData = $request->validate($data);
 
-        if ($request->file('gambar')) {
-            if ($request->oldImage) {
-                storage::delete($request->oldImage);
-            }
-            $validateData['gambar'] = $request->file('gambar')->store('post-images');
-        }
+        // if ($request->file('gambar')) {
+        //     if ($request->oldImage) {
+        //         storage::delete($request->oldImage);
+        //     }
+        //     $validateData['gambar'] = $request->file('gambar')->store('post-images');
+        // }
         Outlet::where('id', $data1->id)->update($validateData);
 
         return redirect('/outlet');

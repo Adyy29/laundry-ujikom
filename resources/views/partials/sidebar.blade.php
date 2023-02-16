@@ -111,7 +111,7 @@
 
             {{-- Card Profile --}}
             <div class="container d-flex justify-content-center">
-                <div class="card p-0 border">
+                <div class="card p-0 mb-0 border">
                     <div class="card-body">
                         <div class="d-flex align-items-center">
                             <div class="avatar avatar-xl">
