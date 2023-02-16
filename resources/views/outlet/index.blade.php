@@ -14,6 +14,7 @@
         </form>
     </div>
 
+
     {{-- List Outlet --}}
     <div class="container text-center">
         <div class="row">
@@ -108,7 +109,6 @@
                         </td>
                     </tr>
             @endforeach
-        </div>
     </div>
     </table>
 
