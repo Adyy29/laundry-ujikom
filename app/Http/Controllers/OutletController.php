@@ -21,7 +21,7 @@ class OutletController extends Controller
         return view('outlet.index', [
             'title' => 'Outlet',
             'deskripsi' => 'Halaman pengelolaan outlet sistem kasir Dry and Clean',
-            'outlets' => Outlet::latest()->filter()->paginate(5)
+            'outlets' => Outlet::latest()->filter()->paginate(4)
         ]);
     }
 
