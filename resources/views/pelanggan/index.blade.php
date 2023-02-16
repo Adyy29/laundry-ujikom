@@ -22,7 +22,7 @@
                     <tbody>
                             @foreach ($pelanggans as $pelanggan )
                         <tr>
-                            <td>{{ $pelanggan->id }}</td>
+                            <td>{{ $loop->iteration }}</td>
                             <td>{{ $pelanggan->nama }}</td>
                             <td>{{ $pelanggan->alamat }}</td>
                             <td>{{ $pelanggan->hp }}</td>

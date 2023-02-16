@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Outlet;
+use App\Models\Paket;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Outlet;
+use App\Models\Pelanggan;
 
 class PaketController extends Controller
 {
@@ -17,7 +19,9 @@ class PaketController extends Controller
     {
         return view('paket.index', [
             'title' => 'Paket',
-            'deskripsi' => 'Halaman pengelolaan paket sistem kasir Dry and Clean'
+            'deskripsi' => 'Halaman pengelolaan paket sistem kasir Dry and Clean',
+            'pakets' => Paket::all(),
+            // latest()->filter()->paginate(5)
         ]);
     }
 
@@ -43,7 +47,15 @@ class PaketController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'id_outlet' => 'required',
+            'jenis' => 'required',
+            'nama' => 'required',
+            'harga' => 'required',
+        ]);
+
+        Paket::create($data);
+        return redirect('/paket');
     }
 
     /**
@@ -57,17 +69,13 @@ class PaketController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function edit(Paket $paket)
     {
         return view('paket.edit', [
             'title' => 'Pelanggan',
-            'deskripsi' => 'Halaman ubah data paket'
+            'deskripsi' => 'Halaman ubah data paket',
+            'pakets' => $paket,
+            'outlets' => Outlet::all(),
         ]);
     }
 
@@ -78,9 +86,19 @@ class PaketController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Paket $paket)
     {
-        //
+        $rules = [
+            'id_outlet' => 'required',
+            'nama' => 'required',
+            'jenis' => 'required',
+            'harga' => 'required',
+        ];
+
+        $validateData = $request->validate($rules);
+
+        Paket::where('id', $paket->id)->update($validateData);
+        return redirect('/paket');
     }
 
     /**
@@ -89,8 +107,9 @@ class PaketController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Paket $paket)
     {
-        //
+        Paket::destroy($paket->id);
+        return redirect('/paket');
     }
 }

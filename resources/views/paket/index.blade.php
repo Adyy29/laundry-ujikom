@@ -19,30 +19,38 @@
                         </tr>
                     </thead>
                     <tbody>
+
+                        @foreach ($pakets as $paket)
+
                         <tr>
-                            <td>1</td>
-                            <td>Meledak</td>
-                            <td>Kiloan</td>
-                            <td>20000</td>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $paket->nama }}</td>
+                            <td>{{ $paket->jenis }}</td>
+                            <td>{{ $paket->harga }}</td>
                             <td>
                                 <div class="row">
                                     <div class="col-lg-6 mb-2">
                                         <div class="d-grid gap-2">
-                                            <a href="/paket/edit" class="btn btn-warning">
+                                            <a href="/paket/{{ $paket->id }}/edit" class="btn btn-warning">
                                                 Edit
                                             </a>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="d-grid gap-2 mb-2">
+                                            <form action="/paket/{{ $paket->id }}" method="post">
+                                                @method('delete')
+                                                @csrf
                                             <button class="btn btn-danger">
                                                 Hapus
                                             </button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -52,7 +60,7 @@
     {{-- Create Page --}}
     <div class="container">
         <div class="d-grid gap-2">
-            <a href="/paket/create" class="btn form-control bg-primary">
+            <a href="/paket/create"  class="btn form-control bg-primary" style="color: white;">
                 <i class="fa-solid fa-plus"></i> Tambah
             </a>
         </div>
