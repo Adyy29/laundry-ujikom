@@ -99,13 +99,6 @@
                     </li>
                 </ul>
 
-                <li class="sidebar-item {{ ($title === 'Laporan') ? 'active' : '' }}">
-                    <a href="/laporan" class='sidebar-link'>
-                        <i class="fa-solid fa-user"></i>
-                        <span>Laporan</span>
-                    </a>
-                </li>
-
                 <form action="/logout" method="post">
                     @csrf
                 <li class="sidebar-item {{ ($title === 'Logout') ? 'active' : '' }}">

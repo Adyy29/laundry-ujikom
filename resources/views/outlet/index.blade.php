@@ -26,7 +26,9 @@
                                 <div class="card">
                                     <div class="card-content">
                                         @if ($outlet->gambar)
-                                            <img class="card-img-top img-fluid justify-content-centered" style="height: 20rem" src="{{ asset('storage/' . $outlet->gambar) }}" alt="" srcset="">
+                                            <img class="card-img-top img-fluid justify-content-centered"
+                                                style="height: 20rem" src="{{ asset('storage/' . $outlet->gambar) }}"
+                                                alt="" srcset="">
                                         @else
                                             <img class="card-img-top img-fluid " src="{{ asset('img/laundry-1.jpg') }}"
                                                 alt="Card image cap" style="height: 20rem" />
@@ -36,7 +38,8 @@
                                             <p class="card-text">
                                                 Jl. {{ $outlet->jalan }}, RT {{ $outlet->RT }}/RW {{ $outlet->RW }},
                                                 Kec. {{ $outlet->kecamatan }}, {{ $outlet->kabupaten }},
-                                                {{ $outlet->provinsi }}, {{ $outlet->negara }}, {{ $outlet->kode_pos }}
+                                                {{ $outlet->provinsi }}, {{ $outlet->negara }},
+                                                {{ $outlet->kode_pos }}
                                             </p>
                                             <div class="row">
                                                 <div class="col-lg-8 my-1">
@@ -53,22 +56,22 @@
                                                 </div>
                                                 <div class="col-lg-2 my-1">
                                                     <div class="d-grid gap-2">
-                                                        <a href="/outlet/{{ $outlet->id }}/edit"
-                                                            class="btn btn-warning">
+                                                        <a href="/outlet/{{ $outlet->id }}/edit" class="btn btn-warning">
                                                             <i class="fa-solid fa-pen"></i>
                                                         </a>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-2 my-1">
-                                                    <div class="d-grid gap-2">
-                                                        <form action="/outlet/{{ $outlet->id }}" method="post">
-                                                            @method('delete')
-                                                            @csrf
-                                                        <button  onclick="return confirm('Kamu Yakin?')" class="btn btn-danger">
-                                                            <i class="fa-solid fa-trash"></i>
-                                                        </button>
+                                                    <form action="/outlet/{{ $outlet->id }}" method="post">
+                                                        @method('delete')
+                                                        @csrf
+                                                        <div class="d-grid gap-2">
+                                                            <button onclick="return confirm('Kamu Yakin?')"
+                                                                class="btn btn-danger">
+                                                                <i class="fa-solid fa-trash"></i>
+                                                            </button>
+                                                        </div>
                                                     </form>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -92,13 +95,17 @@
                                         </div>
                                         <div class="modal-body">
                                             <div class="mx-auto">
-                                                <img class="card-img-top img-fluid justify-content-centered" style="height: 20rem" src="{{ asset('storage/' . $outlet->gambar) }}" alt="" srcset="">
+                                                <img class="card-img-top img-fluid justify-content-centered"
+                                                    style="height: 20rem" src="{{ asset('storage/' . $outlet->gambar) }}"
+                                                    alt="" srcset="">
                                             </div>
                                             <hr>
                                             <p>
-                                                Jl. {{ $outlet->jalan }}, RT {{ $outlet->RT }}/RW {{ $outlet->RW }},
+                                                Jl. {{ $outlet->jalan }}, RT {{ $outlet->RT }}/RW
+                                                {{ $outlet->RW }},
                                                 Kec. {{ $outlet->kecamatan }}, {{ $outlet->kabupaten }},
-                                                {{ $outlet->provinsi }}, {{ $outlet->negara }}, {{ $outlet->kode_pos }}
+                                                {{ $outlet->provinsi }}, {{ $outlet->negara }},
+                                                {{ $outlet->kode_pos }}
                                             </p>
                                         </div>
                                         <div class="modal-footer">
@@ -112,9 +119,10 @@
                             </div>
                         </td>
                     </tr>
+                </table>
             @endforeach
+        </div>
     </div>
-    </table>
 
     {{-- Pagination --}}
     <div class="container d-flex justify-content-center">
@@ -134,4 +142,5 @@
             <i class="fa-solid fa-plus"></i> Tambah Outlet
         </a>
     </div>
+
 @endsection

@@ -33,18 +33,18 @@
                             <div class="form-group">
                                 <label for="first-name-vertical">Jenis Paket</label>
                                 <select name="" id="" class="form-select">
-                                    <option value="kasir">Kiloan</option>
-                                    <option value="admin">Selimut</option>
-                                    <option value="owner">Bedcover</option>
-                                    <option value="admin">Kaos</option>
-                                    <option value="owner">Lainnya</option>
+                                    <option value="Kiloan">Kiloan</option>
+                                    <option value="Selimut">Selimut</option>
+                                    <option value="Bedcover">Bedcover</option>
+                                    <option value="Kaos">Kaos</option>
+                                    <option value="Lainnya">Lainnya</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
                                 <label for="first-name-vertical">Harga Paket</label>
-                                <input type="text" id="first-name-vertical" class="form-control" name="fname"
+                                <input type="number" id="first-name-vertical" class="form-control" name="fname"
                                     placeholder="Masukkan Harga Paket">
                             </div>
                         </div>

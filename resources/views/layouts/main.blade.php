@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{{ asset('assets/extensions/filepond-plugin-image-preview/filepond-plugin-image-preview.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/extensions/toastify-js/src/toastify.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/pages/filepond.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/extensions/sweetalert2/sweetalert2.min.css') }}">
 
 
 </head>
@@ -70,6 +71,8 @@
     {{-- =============== JavaScript =============== --}}
     <script src="{{ asset('assets/extensions/filepond/filepond.js') }}"></script>
     <script src="{{ asset('assets/extensions/toastify-js/src/toastify.js') }}"></script>
+    <script src="{{ asset('assets/extensions/sweetalert2/sweetalert2.min.js') }}"></script>>
+    <script src="{{ asset('assets/js/pages/sweetalert2.js') }}"></script>
     <script src="{{ asset('assets/js/pages/filepond.js') }}"></script>
     <script src="{{ asset('assets/extensions/simple-datatables/umd/simple-datatables.js') }}"></script>
     <script src="{{ asset('assets/js/pages/simple-datatables.js') }}"></script>
