@@ -17,111 +17,25 @@
                         <th>Nama Lengkap</th>
                         <th>Alamat</th>
                         <th>No Hp</th>
-                        <th>Status</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($data as $item )
+
                     <tr>
-                        <td>1</td>
-                        <td>Aldi Andrian</td>
-                        <td>Bandung</td>
-                        <td>085624507658</td>
+                        <td>{{ $item->id }}</td>
+                        <td>{{ $item->nama }}</td>
+                        <td>{{ $item->alamat }}</td>
+                        <td>{{ $item->hp }}</td>
                         <td>
-                            <span class="badge bg-success">Active</span>
+                            <a href="{{ url('edit-pelanggan', $item->id) }}" class="btn btn-warning mx-auto">Edit</a>
+                            <a href="#" class="btn btn-danger">Hapus</a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Aldi Andrian</td>
-                        <td>Bandung</td>
-                        <td>085624507658</td>
-                        <td>
-                            <span class="badge bg-success">Inactive</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Aldi Andrian</td>
-                        <td>Bandung</td>
-                        <td>085624507658</td>
-                        <td>
-                            <span class="badge bg-success">Active</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Aldi Andrian</td>
-                        <td>Bandung</td>
-                        <td>085624507658</td>
-                        <td>
-                            <span class="badge bg-success">Inactive</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Aldi Andrian</td>
-                        <td>Bandung</td>
-                        <td>085624507658</td>
-                        <td>
-                            <span class="badge bg-success">Active</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>Aldi Andrian</td>
-                        <td>Bandung</td>
-                        <td>085624507658</td>
-                        <td>
-                            <span class="badge bg-success">Active</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>Aldi Andrian</td>
-                        <td>Bandung</td>
-                        <td>085624507658</td>
-                        <td>
-                            <span class="badge bg-success">Active</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>Aldi Andrian</td>
-                        <td>Bandung</td>
-                        <td>085624507658</td>
-                        <td>
-                            <span class="badge bg-success">Active</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>Aldi Andrian</td>
-                        <td>Bandung</td>
-                        <td>085624507658</td>
-                        <td>
-                            <span class="badge bg-success">Active</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                        <td>Aldi Andrian</td>
-                        <td>Bandung</td>
-                        <td>085624507658</td>
-                        <td>
-                            <span class="badge bg-success">Active</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>11</td>
-                        <td>Aldi Andrian</td>
-                        <td>Bandung</td>
-                        <td>085624507658</td>
-                        <td>
-                            <span class="badge bg-success">Active</span>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+                    @endforeach
+                </tbody>
+            </table>
             </div>
         </div>
     </div>
