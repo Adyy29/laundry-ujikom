@@ -13,6 +13,7 @@
         </form>
     </div>
 
+
     {{-- List Outlet --}}
     <div class="container text-center">
         <div class="row">
@@ -64,7 +65,7 @@
                 </div>
             @endforeach
         </div>
-        
+
     {{-- Pagination --}}
     <div class="container d-flex justify-content-center">
         {{ $outlets->links() }}
