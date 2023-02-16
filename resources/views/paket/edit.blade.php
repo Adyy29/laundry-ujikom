@@ -14,9 +14,9 @@
                                     <div class="form-group">
                                         <label for="first-name-vertical">Laundry Penyedia Paket</label>
                                         <select name="" id="" class="form-select">
-                                            @foreach ($outlets as $outlet)
-                                                <option value="{{ $outlet->id }}">{{ $outlet->nama }}</option>
-                                            @endforeach
+                                            <option value="kasir">Laundry 1</option>
+                                            <option value="admin">Laundry 2</option>
+                                            <option value="owner">Laundry 3</option>
                                         </select>
                                     </div>
                                 </div>

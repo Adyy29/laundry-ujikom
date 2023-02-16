@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Outlet;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class PaketController extends Controller
 {
@@ -28,7 +30,8 @@ class PaketController extends Controller
     {
         return view('paket.create', [
             'title' => 'Paket',
-            'deskripsi' => 'Halaman tambah data paket'
+            'deskripsi' => 'Halaman tambah data paket',
+            'outlets' => Outlet::all()
         ]);
     }
 

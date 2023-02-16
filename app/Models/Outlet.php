@@ -26,4 +26,8 @@ class Outlet extends Model
                              ->orWhere('kode_pos', 'like', '%' . request('search') . '%');
             }
     }
+
+    public function paket() {
+        return $this->belongsTo(Paket::class);
+    }
 }
