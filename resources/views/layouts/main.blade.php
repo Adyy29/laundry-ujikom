@@ -8,6 +8,7 @@
 
     {{-- =============== Stylesheet =============== --}}
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/login/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/main/app.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/shared/iconly.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/main/app-dark.css') }}">
@@ -18,8 +19,6 @@
     <link rel="stylesheet" href="{{ asset('assets/extensions/filepond-plugin-image-preview/filepond-plugin-image-preview.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/extensions/toastify-js/src/toastify.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/pages/filepond.css') }}">
-
-
 
 
 </head>
@@ -43,8 +42,6 @@
                     {{ $deskripsi }}
                 </p>
             </div>
-
-
             <div class="page-content">
 
                 <hr>
@@ -84,8 +81,6 @@
 
     {{-- =============== JQuery (Online) =============== --}}
     <script src="https://code.jquery.com/jquery-1.9.1.min.js" integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ=" crossorigin="anonymous"></script>
-
-
 
 </body>
 

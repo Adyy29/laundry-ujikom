@@ -58,5 +58,4 @@
     <script src="{{ asset('bootstrap/js/script.js') }}"></script>
 
 </body>
-
 </html>

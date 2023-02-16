@@ -1,0 +1,84 @@
+/* --- Login --- */
+/* With Class */
+body {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../img/bg.png);
+    height: 577px;
+
+}
+body {
+    background-image: linear-gradient(to bottom right, #124CA2, #A4FFEC);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* With Id */
+#card {
+    border: 1px solid black;
+    height: 600px;
+
+    /* CSS Glassmorphism */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.1px);
+    -webkit-backdrop-filter: blur(8.1px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+#login {
+    height: 500px;
+    border-radius: 10px;
+    background-color: #ffffffd0;
+}
+
+/* With Id */
+#login-card {
+    height: 500px;
+}
+
+.bar{
+    text-align: center;
+}
+
+#form2Example1 {
+    background-color: #ffffff00;
+    border: none;
+    border-bottom: 2px solid rgba(0, 0, 255, 0.562);
+    border-radius: 0;
+}
+#form2Example1 input::-webkit-input-placeholder{
+    color: blue;
+}
+
+#form2Example2{
+    background-color: #ffffff00;
+    border: none;
+    border-bottom: 2px solid blue;
+    border-radius: 0;
+}
+
+.isi-kiri img{
+    margin-left: 130px;
+}
+
+.judul{
+    color: #0000FF;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.isi-kiri{
+    width: 85%;
+    margin-left: 40px;
+
+}
+
+#form-outline input{
+    background-color: blue;
+}
+
+button #masuk {
+    width: 200px;
+}
+
