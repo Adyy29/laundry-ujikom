@@ -26,9 +26,9 @@
                                 <div class="card">
                                     <div class="card-content">
                                         @if ($outlet->gambar)
-                                            <img src="{{ asset('storage/' . $outlet->gambar) }}" alt="" srcset="">
+                                            <img class="card-img-top img-fluid justify-content-centered" style="height: 20rem" src="{{ asset('storage/' . $outlet->gambar) }}" alt="" srcset="">
                                         @else
-                                            <img class="card-img-top img-fluid" src="{{ asset('img/laundry-1.jpg') }}"
+                                            <img class="card-img-top img-fluid " src="{{ asset('img/laundry-1.jpg') }}"
                                                 alt="Card image cap" style="height: 20rem" />
                                         @endif
                                         <div class="card-body">
@@ -53,7 +53,7 @@
                                                 </div>
                                                 <div class="col-lg-2 my-1">
                                                     <div class="d-grid gap-2">
-                                                        <a href="{{ url('edit-outlet', $outlet->id) }}"
+                                                        <a href="/outlet/{{ $outlet->id }}/edit"
                                                             class="btn btn-warning">
                                                             <i class="fa-solid fa-pen"></i>
                                                         </a>
@@ -61,9 +61,13 @@
                                                 </div>
                                                 <div class="col-lg-2 my-1">
                                                     <div class="d-grid gap-2">
-                                                        <button type="submit" class="btn btn-danger">
+                                                        <form action="/outlet/{{ $outlet->id }}" method="post">
+                                                            @method('delete')
+                                                            @csrf
+                                                        <button  onclick="return confirm('Kamu Yakin?')" class="btn btn-danger">
                                                             <i class="fa-solid fa-trash"></i>
                                                         </button>
+                                                    </form>
                                                     </div>
                                                 </div>
                                             </div>
@@ -88,7 +92,7 @@
                                         </div>
                                         <div class="modal-body">
                                             <div class="mx-auto">
-                                                <img src="{{ asset('img/1200x700.png') }}" alt="" width="400px">
+                                                <img class="card-img-top img-fluid justify-content-centered" style="height: 20rem" src="{{ asset('storage/' . $outlet->gambar) }}" alt="" srcset="">
                                             </div>
                                             <hr>
                                             <p>

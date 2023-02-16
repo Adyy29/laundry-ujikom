@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Outlet;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\storage;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class OutletController extends Controller
 {
@@ -43,7 +46,7 @@ class OutletController extends Controller
      */
     public function store(Request $request)
     {
-        $rules = $request->validate([
+        $data = $request->validate([
             'nama' => 'required',
             'jalan' => 'required',
             'RT' => 'required',
@@ -61,7 +64,7 @@ class OutletController extends Controller
             $data['gambar'] = $request->file('gambar')->store('post-images');
         }
 
-        Outlet::create($rules);
+        Outlet::create($data);
         return redirect('/outlet');
 
     }
@@ -92,26 +95,46 @@ class OutletController extends Controller
         ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Outlet  $outlet
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Outlet $outlet)
     {
-        //
+
+        $rules = [
+            'nama' => 'required',
+            'jalan' => 'required',
+            'RT' => 'required',
+            'RW' => 'required',
+            'kode_pos' => 'required',
+            'provinsi' => 'required',
+            'kabupaten' => 'required',
+            'kecamatan' => 'required',
+            'negara' => 'required',
+            'telp' => 'required',
+            'gambar' => 'image|file|mimes:jpeg,png,jpg,gif,svg|max:20000'
+        ];
+
+        $validateData = $request->validate($rules);
+
+        // if ($request->file('gambar')) {
+        //     if ($request->oldImage) {
+        //         storage::delete($request->oldImage);
+        //     }
+        //     $validateData['gambar'] = $request->file('gambar')->store('post-images');
+        // }
+
+        if ($request->file('gambar')) {
+            if ($outlet->gambar) {
+                Storage::delete($outlet->gambar);
+            }
+            $validateData['gambar'] = $request->file('gambar')->store('post-images');
+        }
+
+       Outlet::where('id', $outlet->id)->update($validateData);
+        return redirect('/outlet');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Outlet  $outlet
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Outlet $outlet)
     {
-        //
+        Outlet::destroy($outlet->id);
+        return redirect('/outlet');
     }
 }
