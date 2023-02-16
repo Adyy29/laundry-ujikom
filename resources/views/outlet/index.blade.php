@@ -1,6 +1,5 @@
 @extends('layouts.main')
 
-
 @section('content')
     {{-- Search Bar --}}
     <div class="container">
@@ -9,7 +8,7 @@
                 <button class="btn btn-primary" type="submit" id="button-addon1">
                     <i class="fa-solid fa-magnifying-glass"></i> Cari
                 </button>
-                <input type="text" class="form-control" placeholder="Cari Outlet"
+                <input type="text" class="form-control" placeholder="Cari Outlets"
                     name="search"value="{{ request('search') }}">
             </div>
         </form>
