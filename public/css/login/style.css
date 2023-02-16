@@ -1,19 +1,37 @@
 body {
-    background-image: linear-gradient(to bottom right, #124CA2, #A4FFEC);
-    background-size: contain;
+    background: linear-gradient(to bottom right, #124ca2, #a4ffec);
     background-repeat: no-repeat;
 }
 
-/* With Id */
-#card {
-    border: 1px solid black;
-    height: 599px;
-
-    /* CSS Glassmorphism */
-    background: rgba(255, 255, 255, 0.2);
+/* Glassmorphism */
+.card {
+    background: rgba(255, 255, 255, 0.3);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(8.1px);
-    -webkit-backdrop-filter: blur(8.1px);
+    backdrop-filter: blur(6.5px);
+    -webkit-backdrop-filter: blur(6.5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
+    height: fit-content;
+}
+
+@media screen and (max-width: 989px) {
+    body {
+        background: linear-gradient(to bottom right, #124ca2, #a4ffec);
+        background-repeat: no-repeat;
+    }
+
+    /* Glassmorphism */
+    .card {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(6.5px);
+        -webkit-backdrop-filter: blur(6.5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        height: fit-content;
+    }
+
+    #gambar-login {
+        display: none;
+    }
 }

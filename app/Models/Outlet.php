@@ -11,7 +11,19 @@ class Outlet extends Model
 
     protected $table = 'outlets';
     protected $primaryKey = "id";
-    protected $fillable =[
-        'id','nama','nama_jalan','rt','rw','kode_pos','provinsi','kabupaten','kecamatan','gambar','hp'
-    ];
+    protected $guarded = ['id'];
+
+    public function scopeFilter($query) {
+            if (request('search')) {
+                return $query->where('nama', 'like', '%' . request('search') . '%')
+                             ->orWhere('jalan', 'like', '%' . request('search') . '%')
+                             ->orWhere('RT', 'like', '%' . request('search') . '%')
+                             ->orWhere('RW', 'like', '%' . request('search') . '%')
+                             ->orWhere('kecamatan', 'like', '%' . request('search') . '%')
+                             ->orWhere('kabupaten', 'like', '%' . request('search') . '%')
+                             ->orWhere('provinsi', 'like', '%' . request('search') . '%')
+                             ->orWhere('negara', 'like', '%' . request('search') . '%')
+                             ->orWhere('kode_pos', 'like', '%' . request('search') . '%');
+            }
+    }
 }

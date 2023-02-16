@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,56 +9,47 @@
     {{-- ========================= Stylesheet =========================  --}}
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('fontawesome/css/all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css1/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css1/login/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/login/style.css') }}">
 
     {{-- ========================= Icon =========================  --}}
     <link rel="icon" href="{{ asset('') }}">
 
     <title>Login</title>
 </head>
+
 <body>
 
     {{-- Glassmorphism --}}
-    <div class="pewarna"></div>
-    <div class="container mt-5 border" id="login">
-        <div class="row">
-            <div class="col-md-6" id="login-card">
-                <div class="isi-kiri">
-                  <img src="{{ asset('img/laundry.png') }}" alt="" width="">
-                <p class="judul">Silahkan Masukan Username dan Password</p>
-                {{-- Form Login --}}
-                <form>
-                    <!-- Email input -->
-                    <div class=" 22mb-4">
-                      <input type="text" placeholder="Username" id="form2Example1" class="form-control" />
+    <div class="container my-5">
+        <div class="card">
+            <div class="row">
+                <div class="col-lg-6" id="gambar-login">
+                    <div class="container mx-auto me-2" style="margin-top: 130px; margin-bottom: 120px;">
+                        @include('svg.login-image')
                     </div>
-
-                    <!-- Password input -->
-                    <div class="form-outline mb-4">
-                      <input type="password" placeholder="Password" id="form2Example2" class="form-control" />
-                    </div>
-
-                    <!-- 2 column grid layout for inline styling -->
-                    <div class="row mb-4">
-                      <div class="col d-flex">
-                        <!-- Checkbox -->
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
-                          <label class="form-check-label" for="form2Example31"> Remember me </label>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Submit button -->
-                    <div class="d-grid gap-2">
-                        <button type="button" id="masuk" class="btn btn-primary btn-block mb-4">Sign in</button></div>
                 </div>
-            </form>
-            </div>
-            <div class="col-md-6">
-              <img src="{{ asset('img/login-kanan.png') }}" alt="" width="">
-               </div> 
+                <div class="col-lg-6">
+                    <form action="" method="">
+                        <div class="container mx-auto me-2" style="margin-top: 170px; margin-bottom: 175px;">
+                            <h5 class="text-center mb-4">Silahkan Masukkan Username Dan Password</h5>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInput"
+                                    placeholder="name@example.com">
+                                <label for="floatingInput">Email address</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="password" class="form-control" id="floatingPassword"
+                                    placeholder="Password">
+                                <label for="floatingPassword">Password</label>
+                            </div>
+                            <div class="d-grid gap-2 mt-4">
+                                <button type="submit" class="btn btn-primary">
+                                    <b>Masuk</b>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Outlet;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +14,32 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+
+        Outlet::create([
+            'nama' => 'Insan Rahayu',
+            'telp' => '089681238317',
+            'jalan' => 'kebenaran',
+            'RT' => '01',
+            'RW' => '04',
+            'kecamatan' => 'Ciperecet',
+            'kabupaten' => 'Shiganshina',
+            'provinsi' => 'Los angeles',
+            'negara' => 'Wakanda',
+            'kode_pos' => '40394'
+        ]);
+
+        Outlet::create([
+            'nama' => 'Insan Permata',
+            'telp' => '089681238317',
+            'jalan' => 'kebenaran',
+            'RT' => '01',
+            'RW' => '04',
+            'kecamatan' => 'Ciperecet',
+            'kabupaten' => 'Shiganshina',
+            'provinsi' => 'Los angeles',
+            'negara' => 'Wakanda',
+            'kode_pos' => '40394'
+        ]);
+
     }
 }

@@ -65,14 +65,14 @@
                 </li>
 
                 <li class="sidebar-item {{ ($title === 'Pengguna') ? 'active' : '' }}">
-                    <a href="karyawan" class='sidebar-link'>
+                    <a href="/karyawan" class='sidebar-link'>
                         <i class="fa-solid fa-user-group"></i>
                         <span>Kelola Pengguna</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item {{ ($title === 'Paket') ? 'active' : '' }}">
-                    <a href="#" class='sidebar-link'>
+                    <a href="/paket" class='sidebar-link'>
                         <i class="fa-solid fa-boxes-packing"></i>
                         <span>Kelola Paket</span>
                     </a>
@@ -99,13 +99,6 @@
                     </li>
                 </ul>
 
-                <li class="sidebar-item {{ ($title === 'Laporan') ? 'active' : '' }}">
-                    <a href="/laporan" class='sidebar-link'>
-                        <i class="fa-solid fa-user"></i>
-                        <span>Laporan</span>
-                    </a>
-                </li>
-
                 <li class="sidebar-item {{ ($title === 'Logout') ? 'active' : '' }}">
                     <a href="#" class='sidebar-link'>
                         <i class="fa-solid fa-right-from-bracket"></i>
@@ -122,7 +115,7 @@
                     <div class="card-body">
                         <div class="d-flex align-items-center">
                             <div class="avatar avatar-xl">
-                                <img src="assets/images/faces/1.jpg" alt="Face 1">
+                                <img src="{{ asset('assets/images/faces/1.jpg') }}" alt="Face 1">
                             </div>
                             <div class="ms-3 name">
                                 <h5 class="font-bold">John Duck</h5>
