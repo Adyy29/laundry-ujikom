@@ -50,56 +50,56 @@
             <ul class="menu">
                 <li class="sidebar-title">Menu</li>
 
-                <li class="sidebar-item active ">
-                    <a href="#" class='sidebar-link'>
+                <li class="sidebar-item {{ ($title === 'Dashboard') ? 'active' : '' }} ">
+                    <a href="/" class='sidebar-link'>
                         <i class="fa-solid fa-house-chimney"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
 
-                <li class="sidebar-item">
-                    <a href="#" class='sidebar-link'>
+                <li class="sidebar-item {{ ($title === 'Outlet') ? 'active' : '' }}">
+                    <a href="/outlet" class='sidebar-link'>
                         <i class="fa-solid fa-store"></i>
                         <span>Kelola Outlet</span>
                     </a>
                 </li>
 
-                <li class="sidebar-item">
-                    <a href="#" class='sidebar-link'>
+                <li class="sidebar-item {{ ($title === 'Pengguna') ? 'active' : '' }}">
+                    <a href="/karyawan" class='sidebar-link'>
                         <i class="fa-solid fa-user-group"></i>
                         <span>Kelola Pengguna</span>
                     </a>
                 </li>
 
-                <li class="sidebar-item">
-                    <a href="#" class='sidebar-link'>
+                <li class="sidebar-item {{ ($title === 'Paket') ? 'active' : '' }}">
+                    <a href="/paket" class='sidebar-link'>
                         <i class="fa-solid fa-boxes-packing"></i>
                         <span>Kelola Paket</span>
                     </a>
                 </li>
 
-                <li class="sidebar-item">
-                    <a href="#" class='sidebar-link'>
+                <li class="sidebar-item {{ ($title === 'Pelanggan') ? 'active' : '' }}">
+                    <a href="/pelanggan" class='sidebar-link'>
                         <i class="fa-solid fa-user"></i>
                         <span>Kelola Pelanggan</span>
                     </a>
                 </li>
 
-                <li class="sidebar-item  has-sub">
+                <li class="sidebar-item  has-sub {{ ($title === 'Transaksi') ? 'active' : '' }}">
                 <a href="#" class='sidebar-link'>
                     <i class="fa-solid fa-money-check-dollar"></i>
                     <span>Transaksi</span>
                 </a>
                 <ul class="submenu ">
-                    <li class="submenu-item ">
+                    <li class="submenu-item {{ ($title === 'Pembayaran') ? 'active' : '' }}">
                         <a href="component-alert.html">Pembayaran</a>
                     </li>
-                    <li class="submenu-item ">
+                    <li class="submenu-item {{ ($title === 'Riwayat') ? 'active' : '' }}">
                         <a href="component-badge.html">Riwayat Transaksi</a>
                     </li>
                 </ul>
 
-                <li class="sidebar-item">
+                <li class="sidebar-item {{ ($title === 'Logout') ? 'active' : '' }}">
                     <a href="#" class='sidebar-link'>
                         <i class="fa-solid fa-right-from-bracket"></i>
                         <span>Logout</span>
@@ -115,7 +115,7 @@
                     <div class="card-body">
                         <div class="d-flex align-items-center">
                             <div class="avatar avatar-xl">
-                                <img src="assets/images/faces/1.jpg" alt="Face 1">
+                                <img src="{{ asset('assets/images/faces/1.jpg') }}" alt="Face 1">
                             </div>
                             <div class="ms-3 name">
                                 <h5 class="font-bold">John Duck</h5>
