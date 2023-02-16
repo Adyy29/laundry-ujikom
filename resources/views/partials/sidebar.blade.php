@@ -99,12 +99,22 @@
                     </li>
                 </ul>
 
-                <li class="sidebar-item {{ ($title === 'Logout') ? 'active' : '' }}">
-                    <a href="#" class='sidebar-link'>
-                        <i class="fa-solid fa-right-from-bracket"></i>
-                        <span>Logout</span>
+                <li class="sidebar-item {{ ($title === 'Laporan') ? 'active' : '' }}">
+                    <a href="/laporan" class='sidebar-link'>
+                        <i class="fa-solid fa-user"></i>
+                        <span>Laporan</span>
                     </a>
                 </li>
+
+                <form action="/logout" method="post">
+                    @csrf
+                <li class="sidebar-item {{ ($title === 'Logout') ? 'active' : '' }}">
+                    <button type="submit" class='btn form-control sidebar-link'>
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Logout</span>
+                    </button>
+                </li>
+                </form>
 
 
             </ul>
