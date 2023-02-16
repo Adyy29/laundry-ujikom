@@ -72,13 +72,19 @@ Route::get('/pelanggan', function () {
         'deskripsi' => 'Halaman pengelolaan outlet sistem kasir Dry and Clean'
     ]);
 });
-route::post('/pelanggan', [admin::class, 'pelanggantambah']);
-route::get('/edit-pelanggan/{id}', [admin::class, 'pelanggan'])->name('edit-pelanggan');
-route::post('/update-pelanggan/{id}', [admin::class, 'update'])->name('update-pelanggan');
 
-Route::get('/tambahp', function () {
+Route::get('/pelanggan/create', function () {
     return view('registpelanggan.tambahp', [
         'title' => 'Pelanggan',
         'deskripsi' => 'Halaman pengelolaan outlet sistem kasir Dry and Clean'
     ]);
+});
+Route::get('/outlet/create', function () {
+    return view('outlet.tambah', [
+        'title' => 'Outlet',
+        'deskripsi' => 'Halaman pengelolaan outlet sistem kasir Dry and Clean'
+    ]);
+});
+Route::get('/login', function () {
+    return view('login');
 });

@@ -63,7 +63,6 @@
 
 
 
-
     {{-- Modal --}}
     <div class="modal fade" id="exampleModalCenter{{ $item->id }}" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
