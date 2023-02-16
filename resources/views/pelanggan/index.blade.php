@@ -10,6 +10,7 @@
             <div class="card-body">
                 <table class="table table-striped" id="table1">
                     <thead>
+
                         <tr>
                             <th>No</th>
                             <th>Nama Lengkap</th>
@@ -19,30 +20,36 @@
                         </tr>
                     </thead>
                     <tbody>
+                            @foreach ($pelanggans as $pelanggan )
                         <tr>
-                            <td>1</td>
-                            <td>Aldi Andrian</td>
-                            <td>Bandung</td>
-                            <td>085624507658</td>
+                            <td>{{ $pelanggan->id }}</td>
+                            <td>{{ $pelanggan->nama }}</td>
+                            <td>{{ $pelanggan->alamat }}</td>
+                            <td>{{ $pelanggan->hp }}</td>
                             <td>
                                 <div class="row">
                                     <div class="col-lg-6 mb-2">
                                         <div class="d-grid gap-2">
-                                            <a href="/pelanggan/edit" class="btn btn-warning">
+                                            <a href="/pelanggan/{{ $pelanggan->id }}/edit" class="btn btn-warning">
                                                 Edit
                                             </a>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="d-grid gap-2 mb-2">
-                                            <button class="btn btn-danger">
+                                            <form action="/pelanggan/{{ $pelanggan->id }}" method="post">
+                                                @method('delete')
+                                                @csrf
+                                            <button onclick="return confirm('Kamu Yakin?')" class="btn btn-danger">
                                                 Hapus
                                             </button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
