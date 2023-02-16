@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PaketController;
@@ -48,9 +50,3 @@ Route::get('/paket', [PaketController::class, 'index']);
 Route::get('/paket/create', [PaketController::class, 'create']);
 Route::resource('/paket', PaketController::class);
 
-Route::get('/laporan', function () {
-    return view('Laporan.tambah',[
-        'title' => 'Laporan',
-        'deskripsi' => 'Halaman berisi informasi singkat mengenai data-data di dalam sistem kasir Dry and Clean'
-    ]);
-});

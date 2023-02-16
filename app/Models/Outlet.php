@@ -9,6 +9,8 @@ class Outlet extends Model
 {
     use HasFactory;
 
+    protected $table = 'outlets';
+    protected $primaryKey = "id";
     protected $guarded = ['id'];
 
     public function scopeFilter($query) {
