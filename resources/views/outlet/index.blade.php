@@ -36,7 +36,7 @@
                                         <div class="card-body">
                                             <h4 class="card-title">{{ $outlet->nama }}</h4>
                                             <p class="card-text">
-                                                Jl. {{ $outlet->jalan }}, RT {{ $outlet->RT }}/RW {{ $outlet->RW }},
+                                                {{ $outlet->jalan }}, RT {{ $outlet->RT }}/RW {{ $outlet->RW }},
                                                 Kec. {{ $outlet->kecamatan }}, {{ $outlet->kabupaten }},
                                                 {{ $outlet->provinsi }}, {{ $outlet->negara }},
                                                 {{ $outlet->kode_pos }}

@@ -12,7 +12,7 @@
                 <div class="d-grid gap-2 mb-2">
                     <form action="" method="post">
                         @csrf
-                    <button  class="btn btn-danger me-5">
+                    <button  class="btn btn-success me-5">
                         Unduh
                     </button>
                     </form>
