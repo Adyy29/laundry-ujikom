@@ -28,7 +28,7 @@
                         <div class="card-body">
                             <div class="text-center">
                                 <h3 class="">{{ $pengguna->nama }}</h3>
-                                {{-- <p class="mb-1">{{ $pengguna->outlets->nama }}</p> --}}
+                                <p class="mb-1">{{ $pengguna->outlet->nama }}</p>
                                 <small class="text-muted">{{ $pengguna->level }}</small>
                             </div>
                             <div class="row mt-3">

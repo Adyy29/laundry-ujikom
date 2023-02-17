@@ -14,4 +14,8 @@ class Paket extends Model
     protected $primaryKey = "id";
     protected $guarded =['id'];
 
+    public function user() {
+        return $this->belongsToMany(Outlet::class);
+    }
+
 }

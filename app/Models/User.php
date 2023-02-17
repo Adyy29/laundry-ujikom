@@ -24,7 +24,7 @@ class User extends Authenticatable
     protected $guarded = ['id'];
 
     public function outlet() {
-        return $this->hasMany(Outlet::class);
+        return $this->belongsTo(Outlet::class);
     }
 
 }
