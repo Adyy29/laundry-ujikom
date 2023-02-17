@@ -110,10 +110,13 @@
                 </form> --}}
 
                 <li class="sidebar-item {{ ($title === 'Logout') ? 'active' : '' }}">
-                    <a href="/pelanggan" class='sidebar-link'>
+                    <form action="/logout" method="post">
+                        @csrf
+                    <button class='sidebar-link form-control'>
                         <i class="fa-solid fa-right-from-bracket"></i>
                         <span>Logout</span>
-                    </a>
+                    </button>
+                    </form>
                 </li>
 
             </ul>
@@ -127,8 +130,8 @@
                                 <img src="{{ asset('assets/images/faces/1.jpg') }}" alt="Face 1">
                             </div>
                             <div class="ms-3 name">
-                                <h5 class="font-bold">John Duck</h5>
-                                <h6 class="text-muted mb-0">@johnducky</h6>
+                                <h5 class="font-bold">@auth{{ auth()->user()->username }}@endauth</h5>
+                                <h6 class="text-muted mb-0">@auth{{ auth()->user()->level }}@endauth</h6>
                             </div>
                         </div>
                     </div>

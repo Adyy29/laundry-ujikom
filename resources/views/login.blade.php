@@ -21,6 +21,14 @@
 
     {{-- Glassmorphism --}}
     <div class="container my-5">
+        <div class="col-md-12">
+            @if (session()->has('loginerror'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              {{ session('loginerror') }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
+          </div>
         <div class="card">
             <div class="row">
                 <div class="col-lg-6" id="gambar-login">
@@ -29,17 +37,17 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <form action="/proses" method="post" enctype="multipart/form-data">
+                    <form action="/login" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="container mx-auto me-2" style="margin-top: 170px; margin-bottom: 175px;">
                             <h5 class="text-center mb-4">Silahkan Masukkan Username Dan Password</h5>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput"
+                                <input type="text" name="username"class="form-control" id="floatingInput"
                                     placeholder="Masukkan Username">
                                 <label for="floatingInput">Username</label>
                             </div>
                             <div class="form-floating">
-                                <input type="password" class="form-control" id="floatingPassword"
+                                <input type="password" name="password" class="form-control" id="floatingPassword"
                                     placeholder="Password">
                                 <label for="floatingPassword">Password</label>
                             </div>
