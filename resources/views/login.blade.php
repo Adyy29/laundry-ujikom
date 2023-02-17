@@ -29,13 +29,14 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <form action="" method="">
+                    <form action="/proses" method="post" enctype="multipart/form-data">
+                        @csrf
                         <div class="container mx-auto me-2" style="margin-top: 170px; margin-bottom: 175px;">
                             <h5 class="text-center mb-4">Silahkan Masukkan Username Dan Password</h5>
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingInput"
-                                    placeholder="name@example.com">
-                                <label for="floatingInput">Email address</label>
+                                <input type="text" class="form-control" id="floatingInput"
+                                    placeholder="Masukkan Username">
+                                <label for="floatingInput">Username</label>
                             </div>
                             <div class="form-floating">
                                 <input type="password" class="form-control" id="floatingPassword"
@@ -53,6 +54,10 @@
             </div>
         </div>
     </div>
+
+    <script>
+
+    </script>
 
     {{-- ========================= JavaScript =========================  --}}
     <script src="{{ asset('bootstrap/js/script.js') }}"></script>

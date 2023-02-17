@@ -99,7 +99,7 @@
                     </li>
                 </ul>
 
-                <form action="/logout" method="post">
+                {{-- <form action="/logout" method="post">
                     @csrf
                 <li class="sidebar-item {{ ($title === 'Logout') ? 'active' : '' }}">
                     <button type="submit" class='btn form-control sidebar-link'>
@@ -107,8 +107,14 @@
                         <span>Logout</span>
                     </button>
                 </li>
-                </form>
+                </form> --}}
 
+                <li class="sidebar-item {{ ($title === 'Logout') ? 'active' : '' }}">
+                    <a href="/pelanggan" class='sidebar-link'>
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
 
             </ul>
 
