@@ -45,10 +45,14 @@
                                             @method('delete')
                                             @csrf
                                             <div class="d-grid gap-2">
+                                                <form action="/karyawan/{{ $pengguna->id }}" method="post">
+                                                    @method('delete')
+                                                    @csrf
                                                 <button onclick="return confirm('Kamu Yakin?')"
                                                     class="btn btn-danger">
                                                     <i class="fa-solid fa-trash"></i>
                                                 </button>
+                                                </form>
                                             </div>
                                         </form>
                                     </div>
