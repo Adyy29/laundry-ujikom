@@ -5,7 +5,7 @@
     <div class="card-content">
         <div class="card-body">
 
-            <form class="form form-vertical" method="post" action="/karyawan/{{ $pengguna->id }}" enctype="multipart/form-data">
+            <form class="form form-vertical" method="post" action="/karyawan/{{ $penggunas->id }}" enctype="multipart/form-data">
                 @method('put')
                 @csrf
                 <div class="form-body">
@@ -19,7 +19,7 @@
                                 class="form-control @error('nama') is-invalid @enderror"
                                 name="nama"
                                 placeholder="Masukkan Nama Lengkap"
-                                value="{{ old('nama', $pengguna->nama) }}">
+                                value="{{ old('nama', $penggunas->nama) }}">
                             </div>
                             @error('nama')
                                 {{ $message }}
@@ -32,7 +32,8 @@
                                 name="level"
                                 id="level"
                                 class="form-select @error('level') is-invalid @enderror"
-                                value="{{ old('level', $pengguna->level) }}">
+                                >
+                                <option value="{{ $penggunas->level }}">{{ $penggunas->level }}</option>
                                     <option value="kasir">Kasir</option>
                                     <option value="admin">Admin</option>
                                     <option value="owner">Owner</option>
@@ -49,7 +50,7 @@
                                 name="outlet_id"
                                 id="outlet_id"
                                 class="form-select @error('outlet_id') is-invalid @enderror"
-                                value="{{ old('outlet_id', $pengguna->outlet_id) }}">
+                                value="{{ old('outlet_id', $penggunas->outlet_id) }}">
                                     @foreach ($outlets as $outlet)
                                         <option value="{{ $outlet->id }}">{{ $outlet->nama }}</option>
                                     @endforeach
@@ -75,7 +76,7 @@
                                 type="file"
                                 id="gambar"
                                 name="gambar"
-                                value="{{ old('gambar', $pengguna->gambar) }}">
+                                value="{{ old('gambar', $penggunas->gambar) }}">
                             </div>
                             @error('gambar')
                                 {{ $message }}
@@ -90,7 +91,7 @@
                                 class="form-control @error('username') is-invalid @enderror"
                                 name="username"
                                 placeholder="Masukkan Username"
-                                value="{{ old('username', $pengguna->username) }}">
+                                value="{{ old('username', $penggunas->username) }}">
                             </div>
                             @error('username')
                                 {{ $message }}
@@ -105,7 +106,7 @@
                                 class="form-control @error('password') is-invalid @enderror"
                                 name="password"
                                 placeholder="Masukkan Password"
-                                value="{{ old('password', $pengguna->password) }}">
+                                value="{{ old('password', $penggunas->password) }}">
                             </div>
                             @error('password')
                                 {{ $message }}

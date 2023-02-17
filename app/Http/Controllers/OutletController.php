@@ -33,7 +33,7 @@ class OutletController extends Controller
     public function create()
     {
         return view('outlet.create', [
-            'title' => 'Pelanggan',
+            'title' => 'Outlet',
             'deskripsi' => 'Halaman tambah data outlet'
         ]);
     }

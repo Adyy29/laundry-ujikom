@@ -49,7 +49,8 @@ class KaryawanController extends Controller
         $data = $request->validate([
             'outlet_id' => 'required',
             'level' => 'required',
-            'username' => 'required|unique:users|min:5|max:10',
+            // 'username' => 'required|unique:users|min:5|max:10',
+            'username' => 'required',
             'password' => 'required',
             'nama' => 'required',
             'gambar' => 'image|file|mimes:jpeg,png,jpg,gif,svg|max:20000'
@@ -82,13 +83,16 @@ class KaryawanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($id)
     {
-        return view('karyawan.edit',[
+        $penggunas = User::findOrFail($id);
+        $outlets = Outlet::all();
+
+        return view('karyawan.edit', compact('penggunas','outlets'),[
             'title' => 'Pengguna',
             'deskripsi' => 'Halaman ubah data pengguna',
-            'penggunas' => $user,
-            'outlets' => Outlet::all()
+            // 'penggunas' => $user,
+            // 'outlets' => Outlet::all()
         ]);
     }
 
@@ -99,7 +103,7 @@ class KaryawanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
         $rules = [
             'outlet_id' => 'required',
@@ -110,20 +114,23 @@ class KaryawanController extends Controller
         ];
 
 
-        if($request->username != $user->username) {
-            $rules['username'] = 'min:5|max:10|unique:users|required';
+        $penggunas = User::findOrFail($id);
+        if($request->username != $penggunas->username) {
+            $rules['username'] = 'required';
         }
 
         $validatedData = $request->validate($rules);
 
-        if ($request->file('image')) {
-            if($user->image) {
-                Storage::delete($user->image);
+        if ($request->file('gambar')) {
+            if($penggunas->image) {
+                Storage::delete($penggunas->image);
             }
-            $validatedData['image'] = $request->file('image')->store('post-images');
+            $validatedData['gambar'] = $request->file('gambar')->store('post-images');
         }
 
-        User::where('id', $user->id)
+        $validatedData['password'] = bcrypt($validatedData['password']);
+
+        User::where('id', $penggunas->id)
             ->update($validatedData);
         return redirect('/karyawan');
     }
@@ -134,9 +141,10 @@ class KaryawanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        User::destroy($user->id);
+        $penggunas = User::findOrFail($id);
+        User::destroy($penggunas->id);
         return redirect('/karyawan');
     }
 }

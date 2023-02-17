@@ -41,21 +41,21 @@
                             {{-- @foreach ($pelanggans as $pelanggan ) --}}
                         <tr>
                             <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>6</td>
-                            <td>7</td>
-                            <td>8</td>
-                            <td>9</td>
-                            <td>0</td>
-                            <td>11</td>
+                            <td>Insan Permata</td>
+                            <td>Aldi</td>
+                            <td>Meledak</td>
+                            <td>Mirza</td>
+                            <td>8725382602</td>
+                            <td>17/02/2023</td>
+                            <td>18/02/2023</td>
+                            <td>17.00 WIB</td>
+                            <td>Rp.5.599,00</td>
+                            <td>Rp.500.000,00</td>
                             <td>
                                 <div class="row">
                                     <div class="col-lg-6 mb-2">
                                         <div class="d-grid gap-2">
-
+                                            <button class="btn btn-success">Selesai</button>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
