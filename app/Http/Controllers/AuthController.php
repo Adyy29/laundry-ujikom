@@ -44,11 +44,11 @@ class AuthController extends Controller
 
         if (auth()->user()->level === 'admin') {
             return redirect('/');
-        // } elseif (auth()->user()->level === 'kasir') {
-        //     return redirect('/pelanggan');
+        } elseif (auth()->user()->level === 'kasir') {
+            return redirect('/');
         }
             elseif (auth()->user()->level === 'owner') {
-                return redirect('/pelanggan');
+                return redirect('/');
         } else {
             return redirect('/login');
         }
