@@ -62,16 +62,18 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-2 my-1">
-                                                    <form action="/outlet/{{ $outlet->id }}" method="post">
-                                                        @method('delete')
-                                                        @csrf
-                                                        <div class="d-grid gap-2">
-                                                            <button onclick="return confirm('Kamu Yakin?')"
-                                                                class="btn btn-danger">
-                                                                <i class="fa-solid fa-trash"></i>
-                                                            </button>
-                                                        </div>
-                                                    </form>
+                                                    <div class="d-grid gap-2">
+                                                        <form action="/outlet/{{ $outlet->id }}" method="post">
+                                                            @method('delete')
+                                                            @csrf
+                                                            <div class="d-grid gap-2">
+                                                                <button onclick="return confirm('Kamu Yakin?')"
+                                                                    class="btn btn-danger">
+                                                                    <i class="fa-solid fa-trash"></i>
+                                                                </button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

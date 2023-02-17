@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Outlet;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class KaryawanController extends Controller
 {
@@ -15,7 +19,8 @@ class KaryawanController extends Controller
     {
         return view('karyawan.index',[
             'title' => 'Pengguna',
-            'deskripsi' => 'Halaman berisi informasi singkat mengenai data-data di dalam sistem kasir Dry and Clean'
+            'deskripsi' => 'Halaman berisi informasi singkat mengenai data-data di dalam sistem kasir Dry and Clean',
+            'penggunas' => User::latest()->filter()->paginate(6)
         ]);
     }
 
@@ -28,7 +33,8 @@ class KaryawanController extends Controller
     {
         return view('karyawan.create',[
             'title' => 'Pengguna',
-            'deskripsi' => 'Halaman tambah data pengguna'
+            'deskripsi' => 'Halaman tambah data pengguna',
+            'outlets' => Outlet::all()
         ]);
     }
 
@@ -40,7 +46,23 @@ class KaryawanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'outlet_id' => 'required',
+            'level' => 'required',
+            'username' => 'required|unique:users|min:5|max:10',
+            'password' => 'required',
+            'nama' => 'required',
+            'gambar' => 'image|file|mimes:jpeg,png,jpg,gif,svg|max:20000'
+        ]);
+
+        if ($request->file('gambar')) {
+            $data['gambar'] = $request->file('gambar')->store('post-images');
+        }
+
+        $data['password'] = bcrypt($data['password']);
+
+        User::create($data);
+        return redirect('/karyawan');
     }
 
     /**
@@ -60,11 +82,13 @@ class KaryawanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
         return view('karyawan.edit',[
             'title' => 'Pengguna',
-            'deskripsi' => 'Halaman ubah data pengguna'
+            'deskripsi' => 'Halaman ubah data pengguna',
+            'penggunas' => $user,
+            'outlets' => Outlet::all()
         ]);
     }
 
@@ -75,9 +99,33 @@ class KaryawanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        $rules = [
+            'outlet_id' => 'required',
+            'level' => 'required',
+            'password' => 'required',
+            'nama' => 'required',
+            'gambar' => 'image|file|mimes:jpeg,png,jpg,gif,svg|max:20000'
+        ];
+
+
+        if($request->username != $user->username) {
+            $rules['username'] = 'min:5|max:10|unique:users|required';
+        }
+
+        $validatedData = $request->validate($rules);
+
+        if ($request->file('image')) {
+            if($user->image) {
+                Storage::delete($user->image);
+            }
+            $validatedData['image'] = $request->file('image')->store('post-images');
+        }
+
+        User::where('id', $user->id)
+            ->update($validatedData);
+        return redirect('/karyawan');
     }
 
     /**
@@ -86,8 +134,9 @@ class KaryawanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        User::destroy($user->id);
+        return redirect('/karyawan');
     }
 }

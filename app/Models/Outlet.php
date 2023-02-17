@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\User;
+use App\Models\Paket;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Outlet extends Model
 {
@@ -27,11 +29,6 @@ class Outlet extends Model
             }
     }
 
-    public function paket() {
-        return $this->belongsTo(Paket::class);
-    }
 
-    public function user() {
-        return $this->belongsTo(User::class);
-    }
+
 }

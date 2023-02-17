@@ -14,8 +14,4 @@ class Paket extends Model
     protected $primaryKey = "id";
     protected $guarded =['id'];
 
-    public function outlet() {
-        return $this->hasMany(Outlet::class);
-    }
-
 }
