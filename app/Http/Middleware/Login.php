@@ -15,19 +15,22 @@ class Login
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next, $role)
+    public function handle(Request $request, Closure $next, ...$role)
     {
-        if (!Auth::check()) {
-            return redirect('/login');
-        }
+        // if (!Auth::check()) {
+        //     return redirect('/login');
+        // }
 
-        $user = Auth::user();
+        // $user = Auth::user();
 
-        if ($user->level == $role) {
+        // if ($user->level == $role) {
+        //     return $next($request);
+        // }
+        if (in_array(auth()->user()->level, $role)) {
             return $next($request);
         }
 
-        return redirect('/login');
+        return redirect('/redirect');
 
     }
 }

@@ -20,19 +20,32 @@ use App\Http\Controllers\TransaksiControllers;
 |
 */
 
+// Route::get('/dashboard', function () {
+    //         return view('login');
+    //     })->name('dashboard');
+    // // });
+
 // Login
-Route::get('/login', [AuthController::class, 'index']);
-Route::post('/proses', [AuthController::class, 'proses']);
+Route::get('/login', [AuthController::class, 'index'])->name('login');
+Route::post('/login', [AuthController::class, 'gas']);
+
 Route::post('/logout', [admin::class, 'keluar']);
 
- // Dashboard
- Route::get('/', function () {
+route::group(['middleware' => ['auth', 'login:admin,kasir,owner']], function () {
+    Route::get('/redirect', [AuthController::class, 'proses']);
+});
+
+// Dashboard
+route::group(['middleware' => ['auth']], function () {
+Route::get('/', function () {
     return view('dashboard', [
         'title' => 'Dashboard',
         'deskripsi' => 'Halaman berisi informasi singkat mengenai data-data di dalam sistem kasir Dry and Clean'
     ]);
 });
+});
 
+route::group(['middleware' => ['auth', 'login:admin']], function () {
 // Karyawan
 Route::get('/karyawan', [KaryawanController::class, 'index']);
 Route::get('/karyawan/create', [KaryawanController::class, 'create']);
@@ -57,77 +70,29 @@ Route::resource('/paket', PaketController::class);
 Route::get('/Transaksi', [TransaksiControllers::class, 'index']);
 Route::get('/Transaksi/create', [TransaksiControllers::class, 'create']);
 Route::resource('/Transaksi', TransaksiControllers::class);
-
-
-// Route::group(['middleware' => ['auth']], function () {
-
-//     // Admin
-//     Route::group(['middleware' => 'login:admin'], function () {
-
-//         // Dashboard
-//         Route::get('/', function () {
-//             return view('dashboard', [
-//                 'title' => 'Dashboard',
-//                 'deskripsi' => 'Halaman berisi informasi singkat mengenai data-data di dalam sistem kasir Dry and Clean'
-//             ]);
-//         });
-
-//         // Karyawan
-//         Route::get('/karyawan', [KaryawanController::class, 'index']);
-//         Route::get('/karyawan/create', [KaryawanController::class, 'create']);
-//         Route::resource('/karyawan', KaryawanController::class);
-
-//         // Outlet
-//         Route::get('/outlet', [OutletController::class, 'index']);
-//         Route::get('/outlet/create', [OutletController::class, 'create']);
-//         Route::resource('/outlet', OutletController::class);
-
-//         // Pelanggan
-//         Route::get('/pelanggan', [PelangganController::class, 'index']);
-//         Route::get('/pelanggan/create', [PelangganController::class, 'create']);
-//         Route::resource('/pelanggan', PelangganController::class);
-
-//         // paket
-//         Route::get('/paket', [PaketController::class, 'index']);
-//         Route::get('/paket/create', [PaketController::class, 'create']);
-//         Route::resource('/paket', PaketController::class);
-
-//         // Transaksi
-//         Route::get('/Transaksi', [TransaksiControllers::class, 'index']);
-//         Route::get('/Transaksi/create', [TransaksiControllers::class, 'create']);
-//         Route::resource('/Transaksi', TransaksiControllers::class);
-//     });
+});
 
 //     // Kasir
-//     Route::group(['middleware' => 'login:kasir'], function () {
+    Route::group(['middleware' => 'login:kasir'], function () {
 
-//         Route::get('/', function () {
-//             return view('dashboard', [
-//                 'title' => 'Dashboard',
-//                 'deskripsi' => 'Halaman berisi informasi singkat mengenai data-data di dalam sistem kasir Dry and Clean'
-//             ]);
-//         });
+        // Pelanggan
+        Route::get('/pelanggan', [PelangganController::class, 'index']);
+        Route::get('/pelanggan/create', [PelangganController::class, 'create']);
+        Route::resource('/pelanggan', PelangganController::class);
 
-//         // Pelanggan
-//         Route::get('/pelanggan', [PelangganController::class, 'index']);
-//         Route::get('/pelanggan/create', [PelangganController::class, 'create']);
-//         Route::resource('/pelanggan', PelangganController::class);
+        // Transaksi
+        Route::get('/Transaksi', [TransaksiControllers::class, 'index']);
+        Route::get('/Transaksi/create', [TransaksiControllers::class, 'create']);
+        Route::resource('/Transaksi', TransaksiControllers::class);
+    });
 
-//         // Transaksi
-//         Route::get('/Transaksi', [TransaksiControllers::class, 'index']);
-//         Route::get('/Transaksi/create', [TransaksiControllers::class, 'create']);
-//         Route::resource('/Transaksi', TransaksiControllers::class);
-//     });
+    // Admin
+    Route::group(['middleware' => 'login:owner'], function () {
 
-//     // Admin
-//     Route::group(['middleware' => 'login:owner'], function () {
-
-//         Route::get('/', function () {
-//             return view('dashboard', [
-//                 'title' => 'Dashboard',
-//                 'deskripsi' => 'Halaman berisi informasi singkat mengenai data-data di dalam sistem kasir Dry and Clean'
-//             ]);
-//         });
-//     });
-
-// });
+        Route::get('/', function () {
+            return view('dashboard', [
+                'title' => 'Dashboard',
+                'deskripsi' => 'Halaman berisi informasi singkat mengenai data-data di dalam sistem kasir Dry and Clean'
+            ]);
+        });
+    });
