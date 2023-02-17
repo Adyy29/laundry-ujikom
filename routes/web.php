@@ -7,6 +7,7 @@ use App\Http\Controllers\PaketController;
 use App\Http\Controllers\OutletController;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\PelangganController;
+use App\Http\Controllers\TransaksiControllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,5 +60,10 @@ Route::resource('/pelanggan', PelangganController::class);
 Route::get('/paket', [PaketController::class, 'index']);
 Route::get('/paket/create', [PaketController::class, 'create']);
 Route::resource('/paket', PaketController::class);
+
+// Transaksi
+Route::get('/Transaksi', [TransaksiControllers::class, 'index']);
+Route::get('/Transaksi/create', [TransaksiControllers::class, 'create']);
+Route::resource('/Transaksi', TransaksiControllers::class);
 // });
 

@@ -85,14 +85,14 @@
                     </a>
                 </li>
 
-                <li class="sidebar-item  has-sub {{ ($title === 'Transaksi') ? 'active' : '' }}">
+                <li class="sidebar-item  has-sub {{ ($title === 'Pembayaran') ? 'active' : '' }}">
                 <a href="#" class='sidebar-link'>
                     <i class="fa-solid fa-money-check-dollar"></i>
                     <span>Transaksi</span>
                 </a>
                 <ul class="submenu ">
                     <li class="submenu-item {{ ($title === 'Pembayaran') ? 'active' : '' }}">
-                        <a href="component-alert.html">Pembayaran</a>
+                        <a href="/Transaksi">Pembayaran</a>
                     </li>
                     <li class="submenu-item {{ ($title === 'Riwayat') ? 'active' : '' }}">
                         <a href="component-badge.html">Riwayat Transaksi</a>
